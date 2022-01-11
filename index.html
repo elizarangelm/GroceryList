@@ -35,6 +35,7 @@
         <ul class="list-group">
             <!--ordenar por fecha-->
             <li ng-repeat="item in groceryItems | orderBy: 'date'" class="list-group-item text-center clearfix">
+                <!--siempre en mayusculas-->
                 <span style="font-weight: bold">{{item.itemName | uppercase}}</span>
             </li>
         </ul>
