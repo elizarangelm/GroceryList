@@ -29,17 +29,9 @@
         </div>
     </div>
 </nav>
+    <!--se busca que es lo que siempre esta cambiando para crear un componenete-->
+<div class="container" ng-view>
 
-<div class="container" ng-controller="GroceryListItemsController">
-    <div class="col-xs-12">
-        <ul class="list-group">
-            <!--ordenar por fecha-->
-            <li ng-repeat="item in groceryItems | orderBy: 'date'" class="list-group-item text-center clearfix">
-                <!--siempre en mayusculas-->
-                <span style="font-weight: bold">{{item.itemName | uppercase}}</span>
-            </li>
-        </ul>
-    </div>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -47,6 +39,8 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="lib/bootstrap.min.js"></script>
 <script src="lib/angular.min.js"></script>
+   <!--asegurarse de tener angular route-->
+<script src="lib/angular-route.min.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
