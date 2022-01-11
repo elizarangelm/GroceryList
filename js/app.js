@@ -10,7 +10,7 @@ app.controller("HomeController", ["$scope", function($scope) {
 app.controller("GroceryListItemsController", ["$scope", function($scope){
 
     $scope.groceryItems = [
-        {completed: true, itemName: 'milk', date: '2014-10-01'},
+        {completed: true, itemName: 'milk', date: '2014-10-00'},
         {completed: true, itemName: 'cookies', date: '2014-10-01'},
         {completed: true, itemName: 'ice cream', date: '2014-10-02'},
         {completed: true, itemName: 'potatoes', date: '2014-10-02'},
