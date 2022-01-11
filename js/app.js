@@ -1,6 +1,8 @@
-
+/**
+ * Created by Thomas on 5/28/2015.
+ */
 var app = angular.module('groceryListApp', ["ngRoute"]);
-//creando rutas
+
 app.config(function($routeProvider){
     $routeProvider
         .when("/",{
@@ -8,6 +10,10 @@ app.config(function($routeProvider){
             controller: "GroceryListItemsController"
         })
         .when("/addItem",{
+            templateUrl: "views/addItem.html",
+            controller: "GroceryListItemsController"
+        })
+        .when("/addItem/:id/:cat",{
             templateUrl: "views/addItem.html",
             controller: "GroceryListItemsController"
         })
@@ -20,7 +26,7 @@ app.controller("HomeController", ["$scope", function($scope) {
     $scope.appTitle = "Grocery List";
 }]);
 
-app.controller("GroceryListItemsController", ["$scope", function($scope){
+app.controller("GroceryListItemsController", ["$scope", "$routeParams", function($scope, $routeParams){
 
     $scope.groceryItems = [
         {completed: true, itemName: 'milk', date: '2014-10-00'},
@@ -33,4 +39,5 @@ app.controller("GroceryListItemsController", ["$scope", function($scope){
         {completed: true, itemName: 'tortillas', date: '2014-10-04'}
     ]
 
+    $scope.rp = "Route Paramater Value: " + $routeParams.id + $routeParams.cat;
 }]);
